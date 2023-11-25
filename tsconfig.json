@@ -14,11 +14,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* absolute import paths */
-    "baseUrl": ".",
-    "paths": {
-      "src/*": ["./src/*"]
-    },
+    /* Base URL */
+    "baseUrl": "src",
 
     /* Linting */
     "strict": true,

@@ -1,0 +1,9 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M500 85L500 914" stroke="#008080" stroke-width="150" stroke-linecap="round"/>
+<path d="M915 85L500 85" stroke="#008080" stroke-width="150" stroke-linecap="round"/>
+<path d="M725.63 500L724 500.045" stroke="#008080" stroke-width="150" stroke-linecap="round"/>
+<path d="M86.6296 700L85 700.045" stroke="#008080" stroke-width="150" stroke-linecap="round"/>
+<path d="M276 85L85 85" stroke="#008080" stroke-width="150" stroke-linecap="round"/>
+<path d="M915 914H724" stroke="#008080" stroke-width="150" stroke-linecap="round"/>
+<path d="M500 914L85 915" stroke="#008080" stroke-width="150" stroke-linecap="round"/>
+</svg>
