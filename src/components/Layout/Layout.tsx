@@ -12,7 +12,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <ParticleEffect />
       <Navbar />
-      <Flex mt={"56px"} w={"full"}>
+      <Flex
+        mt={"56px"}
+        w={"full"}
+        direction={"column"}
+        px={{ base: "5px", md: "100px", lg: "150px" }}
+      >
         {children}
       </Flex>
     </>
