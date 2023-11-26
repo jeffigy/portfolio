@@ -1,4 +1,4 @@
-import { Flex, Text, VStack, useColorMode } from "@chakra-ui/react";
+import { Flex, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 type CustomSectionProps = {

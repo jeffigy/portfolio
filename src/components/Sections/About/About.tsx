@@ -1,17 +1,7 @@
-import React from "react";
 import CustomSection from "../CustomSection";
-import {
-  Flex,
-  HStack,
-  Text,
-  Image,
-  Stack,
-  AspectRatio,
-} from "@chakra-ui/react";
-import Pic from "assets/picture0.jpg";
-type AboutProps = {};
+import { Text } from "@chakra-ui/react";
 
-const About: React.FC<AboutProps> = () => {
+const About = () => {
   return (
     <CustomSection sectionTitle="About" sectionName="about">
       <Text zIndex={1} maxW={"container.md"} mx={"10px"} bgColor={"brand.bg"}>
