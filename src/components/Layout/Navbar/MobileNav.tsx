@@ -7,6 +7,7 @@ import {
   Flex,
   IconButton,
   ModalCloseButton,
+  Spacer,
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
@@ -43,8 +44,9 @@ const MobileNav: React.FC<MobileNavProps> = ({ NavLinks }) => {
           <Flex
             w={"full"}
             h={"56px"}
-            px={{ base: "20px", sm: "60px", md: "100px" }}
+            px={{ base: "0px", sm: "40px", md: "100px" }}
           >
+            <Spacer />
             <ModalCloseButton
               color={"teal"}
               size={"lg"}

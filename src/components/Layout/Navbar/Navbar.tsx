@@ -23,12 +23,9 @@ const Navbar: React.FC<NavbarProps> = () => {
       top={0}
       position={"fixed"}
       align={"center"}
-      //   mx={"auto"}
       w={"full"}
       px={{ base: "5px", sm: "50px", md: "100px", lg: "150px" }}
     >
-      <MobileNav NavLinks={NavLinks} />
-      <Spacer display={{ base: "block", md: "none" }} />
       <Logo />
       <Spacer />
       <HStack
@@ -39,6 +36,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <NavLink key={index} name={link.name} to={link.to} />
         ))}
       </HStack>
+      <MobileNav NavLinks={NavLinks} />
     </Flex>
   );
 };
