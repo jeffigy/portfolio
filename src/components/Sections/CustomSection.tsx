@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, VStack, useColorMode } from "@chakra-ui/react";
 import React from "react";
 
 type CustomSectionProps = {
@@ -30,7 +30,9 @@ const CustomSection: React.FC<CustomSectionProps> = ({
             {sectionTitle}
           </Text>
         )}
-        {children}
+        <Flex align={"center"} justify={"center"} w={"full"} flexGrow={1}>
+          <VStack spacing={10}>{children}</VStack>
+        </Flex>
       </Flex>
     </div>
   );
