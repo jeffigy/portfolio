@@ -1,18 +1,9 @@
-import {
-  Flex,
-  Image,
-  Stack,
-  Text,
-  Button,
-  useColorMode,
-  Heading,
-} from "@chakra-ui/react";
+import { Flex, Image, Stack, Text, Button, Heading } from "@chakra-ui/react";
 import CustomSection from "components/Sections/CustomSection";
 import ProfilePicture from "assets/profile.jpg";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 function Hero() {
-  const { colorMode } = useColorMode();
   return (
     <CustomSection sectionName="hero">
       <Flex
@@ -30,7 +21,7 @@ function Hero() {
             zIndex={1}
             textAlign={{ base: "center", md: "start" }}
             fontSize={"16px"}
-            color={colorMode === "dark" ? "teal.200" : "teal"}
+            color={"teal"}
           >
             Hello, I am
           </Text>
@@ -40,7 +31,7 @@ function Hero() {
             as={"h1"}
             textAlign={{ base: "center", md: "start" }}
             fontSize={{ base: "30px", sm: "38px", md: "40px", lg: "72px" }}
-            color={colorMode === "dark" ? "gray.100" : "gray.600"}
+            color={"gray.600"}
           >
             Jeffy Evangelista
           </Heading>
@@ -51,7 +42,7 @@ function Hero() {
             variant={"heading"}
             textAlign={{ base: "center", md: "start" }}
             fontSize={{ base: "24px", sm: "25px", md: "34px", lg: "48px" }}
-            color={colorMode === "dark" ? "gray.200" : "gray.500"}
+            color={"gray.500"}
           >
             Web Developer
           </Heading>
