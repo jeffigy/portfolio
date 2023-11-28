@@ -3,6 +3,9 @@ import CustomSection from "components/Sections/CustomSection";
 import ProfilePicture from "assets/profile.jpg";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { ZIndex } from "tsparticles-engine";
+
 function Hero() {
   return (
     <CustomSection sectionName="hero">
@@ -90,6 +93,16 @@ function Hero() {
             </motion.a>
           </Stack>
         </Flex>
+        {/* <div style={{ zIndex: 1 }}>
+          <LazyLoadImage
+            alt={"cover-photo"}
+            height={"250px"}
+            src={ProfilePicture} // use normal <img> attributes as props
+            width={"250px"}
+          />
+          <span>{"hello"}</span>
+        </div> */}
+
         <Image
           zIndex={1}
           borderRadius={"full"}

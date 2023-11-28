@@ -15,6 +15,7 @@ const LandingPage = () => {
   return (
     <>
       {/* apply useInView  */}
+
       <div ref={myRef}>
         <Hero />
       </div>

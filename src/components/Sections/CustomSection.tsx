@@ -18,6 +18,7 @@ const CustomSection: React.FC<CustomSectionProps> = ({
         direction={"column"}
         align={"center"}
         minH={"calc(100vh - 56px)"}
+        // py={"100px"}
         mb={{ base: "50px", md: "100px" }}
       >
         {sectionTitle && (
