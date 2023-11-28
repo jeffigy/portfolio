@@ -3,8 +3,6 @@ import CustomSection from "components/Sections/CustomSection";
 import ProfilePicture from "assets/profile.jpg";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { ZIndex } from "tsparticles-engine";
 
 function Hero() {
   return (
@@ -49,16 +47,6 @@ function Hero() {
           >
             Web Developer
           </Heading>
-          {/* <Text
-            px={{ base: "25px", sm: "50px", md: "0px" }}
-            fontSize={{ base: "14px", md: "16px" }}
-            mb={"30px"}
-            textAlign={{ base: "center", md: "start" }}
-          >
-            Driven by thirst for learning and profound fascination on how
-            technology works. I am a web developer who is passionate about
-            building software solutions. Welcome to my developer portfolio!
-          </Text> */}
           <Stack
             justify={{ base: "center", md: "start" }}
             direction={{ base: "column", md: "row" }}
@@ -93,16 +81,6 @@ function Hero() {
             </motion.a>
           </Stack>
         </Flex>
-        {/* <div style={{ zIndex: 1 }}>
-          <LazyLoadImage
-            alt={"cover-photo"}
-            height={"250px"}
-            src={ProfilePicture} // use normal <img> attributes as props
-            width={"250px"}
-          />
-          <span>{"hello"}</span>
-        </div> */}
-
         <Image
           zIndex={1}
           borderRadius={"full"}
