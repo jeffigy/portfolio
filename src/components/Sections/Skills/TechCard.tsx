@@ -11,13 +11,13 @@ const TechCard: React.FC<TechCardProps> = ({ techName, techLogo, index }) => {
   const fadeInAnimationsVariants = {
     initial: {
       opacity: 0,
-      y: 300,
+      y: 100,
     },
     animate: (index: number) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.2 * index,
+        delay: 0.1 * index,
       },
     }),
   };
