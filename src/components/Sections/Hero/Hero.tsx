@@ -1,9 +1,9 @@
 import { Flex, Image, Stack, Text, Button, Heading } from "@chakra-ui/react";
 import CustomSection from "components/Sections/CustomSection";
-import ProfilePicture from "assets/profile.jpg";
+import ProfilePicture from "assets/profile.webp";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 function Hero() {
   return (
     <CustomSection sectionName="hero">
@@ -82,6 +82,7 @@ function Hero() {
           </Stack>
         </Flex>
         <Image
+          as={LazyLoadImage}
           zIndex={1}
           borderRadius={"full"}
           boxSize={{ base: "230px", md: "250px", lg: "300px" }}

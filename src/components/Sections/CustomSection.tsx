@@ -17,8 +17,8 @@ const CustomSection: React.FC<CustomSectionProps> = ({
       <Flex
         direction={"column"}
         align={"center"}
-        // minH={"calc(100vh - 56px)"}
-        minH={"500px"}
+        minH={"calc(100vh - 56px)"}
+        // minH={"500px"}
         // py={"100px"}
         mb={{ base: "50px", md: "100px" }}
       >

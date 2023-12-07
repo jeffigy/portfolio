@@ -26,7 +26,7 @@ const NavLink: React.FC<NavLinkProps> = ({ name, to, onClose }) => {
       offset={-56}
       spy={true}
       smooth={true}
-      duration={500}
+      duration={100}
       variant={"ghost"}
       onClick={handleClick}
       mb={{ base: "20px", md: "0px" }}

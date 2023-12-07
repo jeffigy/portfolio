@@ -1,13 +1,12 @@
-import { Card, Flex, Image } from "@chakra-ui/react";
+import { Card, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 type TechCardProps = {
   techName: string;
-  techLogo?: string;
   index: number;
 };
 
-const TechCard: React.FC<TechCardProps> = ({ techName, techLogo, index }) => {
+const TechCard: React.FC<TechCardProps> = ({ techName, index }) => {
   const fadeInAnimationsVariants = {
     initial: {
       opacity: 0,
@@ -23,9 +22,10 @@ const TechCard: React.FC<TechCardProps> = ({ techName, techLogo, index }) => {
   };
   return (
     <Card
+      borderRadius={"full"}
       as={motion.div}
       whileHover={{ scale: 1.1 }}
-      boxSize="160px"
+      p={5}
       justify="center"
       align="center"
       sx={{
@@ -42,15 +42,7 @@ const TechCard: React.FC<TechCardProps> = ({ techName, techLogo, index }) => {
       custom={index}
     >
       <Flex direction="column" align="center">
-        <motion.div whileHover={{ scale: 1.2 }}>
-          <Image
-            src={techLogo}
-            alt="Tech Logo"
-            w={{ base: "65px", md: "100px" }}
-            h={{ base: "65px", md: "100px" }}
-          />
-        </motion.div>
-        <motion.p whileHover={{ scale: 1.2 }}>{techName}</motion.p>
+        <Text>{techName}</Text>
       </Flex>
     </Card>
   );
