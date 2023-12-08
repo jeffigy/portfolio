@@ -21,12 +21,13 @@ const NavLink: React.FC<NavLinkProps> = ({ name, to, onClose }) => {
   }, [isMdScreen, onClose]);
   return (
     <Button
+      href={to}
       as={Link}
       to={to}
       offset={-56}
       spy={true}
       smooth={true}
-      duration={100}
+      duration={500}
       variant={"ghost"}
       onClick={handleClick}
       mb={{ base: "20px", md: "0px" }}
