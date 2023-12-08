@@ -52,7 +52,7 @@ function Hero() {
             direction={{ base: "column", md: "row" }}
             gap={{ base: 1, md: 5 }}
           >
-            <motion.a whileHover={{ scale: 1.1, zIndex: 2 }}>
+            <motion.div whileHover={{ scale: 1.1, zIndex: 2 }}>
               <Button
                 href="contact"
                 w={"full"}
@@ -65,8 +65,8 @@ function Hero() {
               >
                 Get in Touch
               </Button>
-            </motion.a>
-            <motion.a whileHover={{ scale: 1.1, zIndex: 2 }}>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1, zIndex: 2 }}>
               <Button
                 href="projects"
                 w={"full"}
@@ -80,7 +80,7 @@ function Hero() {
               >
                 Explore Projects{" "}
               </Button>
-            </motion.a>
+            </motion.div>
           </Stack>
         </Flex>
         <Image
