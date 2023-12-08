@@ -54,6 +54,7 @@ function Hero() {
           >
             <motion.a whileHover={{ scale: 1.1, zIndex: 2 }}>
               <Button
+                href="contact"
                 w={"full"}
                 as={Link}
                 to={"contact"}
@@ -67,6 +68,7 @@ function Hero() {
             </motion.a>
             <motion.a whileHover={{ scale: 1.1, zIndex: 2 }}>
               <Button
+                href="projects"
                 w={"full"}
                 as={Link}
                 to={"projects"}
