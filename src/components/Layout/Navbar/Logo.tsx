@@ -5,8 +5,8 @@ import { Link } from "react-scroll";
 const Logo = () => {
   return (
     <Link
-      href="hero"
-      to="hero"
+      href="home"
+      to="home"
       spy={true}
       smooth={true}
       offset={-56}

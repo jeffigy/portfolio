@@ -5,23 +5,18 @@ type CustomSectionProps = {
   children?: React.ReactNode;
   sectionTitle?: string;
   sectionName: string;
+  minH: string;
 };
 
 const CustomSection: React.FC<CustomSectionProps> = ({
   children,
   sectionName,
   sectionTitle,
+  minH,
 }) => {
   return (
     <div id={sectionName}>
-      <Flex
-        direction={"column"}
-        align={"center"}
-        minH={"calc(100vh - 56px)"}
-        // minH={"500px"}
-        // py={"100px"}
-        mb={{ base: "50px", md: "100px" }}
-      >
+      <Flex direction={"column"} align={"center"} minH={minH}>
         {sectionTitle && (
           <Text
             zIndex={1}

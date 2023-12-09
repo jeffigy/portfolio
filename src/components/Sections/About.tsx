@@ -1,9 +1,9 @@
-import CustomSection from "../CustomSection";
+import CustomSection from "./CustomSection";
 import { Text } from "@chakra-ui/react";
 
 const About = () => {
   return (
-    <CustomSection sectionTitle="About" sectionName="about">
+    <CustomSection sectionTitle="About" sectionName="about" minH="500px">
       <Text zIndex={1} maxW={"container.md"} mx={"10px"} bgColor={"brand.bg"}>
         Hello, I’m Jeffy Evangelista, a passionate web developer with a thirst
         for learning and a profound fascination with technology. From a young

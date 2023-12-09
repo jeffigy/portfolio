@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar/Navbar";
 import { Flex } from "@chakra-ui/react";
 import ParticleEffect from "../ParticleEffect";
+import ActiveSectionContextProvider from "context/active-section-context";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -9,7 +10,7 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <ActiveSectionContextProvider>
       <ParticleEffect />
       <Navbar />
       <Flex
@@ -20,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       >
         {children}
       </Flex>
-    </>
+    </ActiveSectionContextProvider>
   );
 };
 export default Layout;

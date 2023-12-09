@@ -1,12 +1,12 @@
 import { Card, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
-type TechCardProps = {
+type SkillProps = {
   techName: string;
   index: number;
 };
 
-const TechCard: React.FC<TechCardProps> = ({ techName, index }) => {
+const Skill: React.FC<SkillProps> = ({ techName, index }) => {
   const fadeInAnimationsVariants = {
     initial: {
       opacity: 0,
@@ -47,4 +47,4 @@ const TechCard: React.FC<TechCardProps> = ({ techName, index }) => {
     </Card>
   );
 };
-export default TechCard;
+export default Skill;

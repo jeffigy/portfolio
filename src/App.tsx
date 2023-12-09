@@ -3,9 +3,7 @@ import Layout from "./components/Layout/Layout";
 import { Flex } from "@chakra-ui/react";
 const LazyPage = React.lazy(() => import("pages/Landing/index"));
 
-type AppProps = {};
-
-const App: React.FC<AppProps> = () => {
+const App = () => {
   useEffect(() => {
     async function getLoader() {
       const { quantum } = await import("ldrs");

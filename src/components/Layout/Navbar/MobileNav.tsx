@@ -14,7 +14,7 @@ import React from "react";
 import NavLink from "./NavLink";
 
 type MobileNavProps = {
-  NavLinks: { name: string; to: string }[];
+  NavLinks: { name: string; hash: string }[];
 };
 
 const MobileNav: React.FC<MobileNavProps> = ({ NavLinks }) => {
@@ -66,7 +66,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ NavLinks }) => {
               {NavLinks.map((link, index) => (
                 <NavLink
                   key={index}
-                  to={link.to}
+                  to={link.hash}
                   name={link.name}
                   onClose={onClose}
                 />
