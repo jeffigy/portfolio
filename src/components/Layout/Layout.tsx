@@ -18,6 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         w={"full"}
         direction={"column"}
         px={{ base: "5px", md: "100px", lg: "150px" }}
+        bgColor={"brand.bg"}
       >
         {children}
       </Flex>
