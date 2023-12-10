@@ -1,12 +1,4 @@
 import perfilRemastered from "assets/projects/perfil-remastered.png";
-// export const NavLinks = [
-//   { name: "Home", to: "hero" },
-//   { name: "About", to: "about" },
-//   { name: "Skills", to: "skills" },
-//   { name: "Projects", to: "projects" },
-//   { name: "Contact", to: "contact" },
-// ];
-
 export const Links = [
   {
     name: "Home",

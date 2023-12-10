@@ -1,15 +1,19 @@
 import CustomSection from "./CustomSection";
 import { Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useSectionInView } from "lib/hooks";
 const About = () => {
+  const { ref } = useSectionInView("About");
   return (
     <motion.section
+      ref={ref}
+      id="about"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
       style={{ marginLeft: "auto", marginRight: "auto" }}
     >
-      <CustomSection sectionTitle="About" sectionName="about" minH="800px">
+      <CustomSection sectionTitle="About" sectionName="about" minH="600px">
         <Text zIndex={1} maxW={"container.md"} mx={"10px"} bgColor={"brand.bg"}>
           Hello, I’m Jeffy Evangelista, a passionate web developer with a thirst
           for learning and a profound fascination with technology. From a young
@@ -29,15 +33,6 @@ const About = () => {
           and I also prioritize regular exercise to maintain a healthy body and
           mind.
         </Text>
-        {/* <Image
-        // set borderRadius to uneven values
-        borderRadius={"200px 20px 150px 20px"}
-        zIndex={1}
-        m={"10px"}
-        alt="about-photo"
-        boxSize={{ base: "230px", md: "250px", lg: "350px" }}
-        src={Pic}
-      /> */}
       </CustomSection>
     </motion.section>
   );

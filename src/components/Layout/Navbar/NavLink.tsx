@@ -1,4 +1,5 @@
 import { Button, useBreakpointValue } from "@chakra-ui/react";
+import { useActiveSectionContext } from "context/active-section-context";
 import React, { useEffect } from "react";
 import { Link } from "react-scroll";
 type NavLinkProps = {
@@ -8,11 +9,17 @@ type NavLinkProps = {
 };
 
 const NavLink: React.FC<NavLinkProps> = ({ name, to, onClose }) => {
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
+
   const isMdScreen = useBreakpointValue({ base: false, md: true });
   const handleClick = () => {
+    setActiveSection(name);
+    setTimeOfLastClick(Date.now());
     if (onClose) {
       onClose();
     }
+    console.log("activeSection", activeSection);
   };
   useEffect(() => {
     if (isMdScreen && onClose) {
