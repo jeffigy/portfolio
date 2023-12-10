@@ -1,80 +1,73 @@
-import React from "react";
-import { motion } from "framer-motion";
-import {
-  Box,
-  Card,
-  CardBody,
-  Flex,
-  Image,
-  Text,
-  Tag,
-  HStack,
-  Button,
-} from "@chakra-ui/react";
-import Perfil from "assets/projects/perfil-remastered.png";
-type ProjectProps = {};
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Card, Flex, Image, Text, Tag, Button, Stack } from "@chakra-ui/react";
+import { projectsData } from "lib/data";
+type ProjectProps = (typeof projectsData)[number];
 
-const Project: React.FC<ProjectProps> = () => (
-  <Card as={motion.div} whileHover={{ scale: 1.02, zIndex: 2 }}>
-    <CardBody>
-      <Flex align="center">
-        <Box w={"500px"} mr={"10px"}>
-          <Image
-            border={"1px solid #000"}
-            src={Perfil}
-            alt="Perfil"
-            rounded="md"
-            w={"100%"}
-            style={{
-              aspectRatio: "16/9",
-            }}
-          />
-        </Box>
-        <Flex h="full" direction={"column"}>
+export default function Project({
+  title,
+  description,
+  tags,
+  imageUrl,
+}: ProjectProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{
+        scale: scaleProgess,
+        opacity: opacityProgess,
+      }}
+    >
+      <Card maxW={"700px"} direction={"row"} overflow={"hidden"}>
+        <Image
+          display={{
+            base: "none",
+            md: "block",
+          }}
+          border={"1px"}
+          position={"relative"}
+          left={"-70px"}
+          top={"50px"}
+          src={imageUrl}
+          alt="project-image"
+          rounded="md"
+          maxW={"350px"}
+        />
+
+        <Stack h="full" gap={"15px"} m={"10px"}>
           <Text fontSize={"24px"} color={"gray.500"} fontWeight={"bold"}>
-            This is the title
+            {title}
           </Text>
           <Text maxW={"container.sm"} colorScheme="teal">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id
-            scelerisque arcu. Curabitur dapibus pellentesque tellus, consequat
-            pellentesque risus viverra id. Sed laoreet posuere augue, at gravida
-            neque finibus et. Nulla facilisi. Vivamus at mi ante. Donec non
-            facilisis metus. Vivamus nec nisl commodo, sagittis nisi nec,
-            fermentum lectus. Aenean.
+            {description}
           </Text>
-          <HStack>
-            <Tag
-              size={"lg"}
-              borderRadius="full"
-              variant="subtle"
-              colorScheme="teal"
-            >
-              Tag 1
-            </Tag>
-            <Tag
-              size={"lg"}
-              borderRadius="full"
-              variant="subtle"
-              colorScheme="teal"
-            >
-              Tag 2
-            </Tag>
-            <Tag
-              size={"lg"}
-              borderRadius="full"
-              variant="subtle"
-              colorScheme="teal"
-            >
-              Tag 3
-            </Tag>
-          </HStack>
-          <Flex>
-            <Button variant={"ghost"}>Source Code</Button>
-            <Button mr={2}>Demo</Button>
+          <Flex flexWrap={"wrap"}>
+            {tags.map((tag, index) => (
+              <Tag
+                key={index}
+                mr={2}
+                mt={2}
+                rounded={"full"}
+                colorScheme="blue"
+              >
+                {tag}
+              </Tag>
+            ))}
           </Flex>
-        </Flex>
-      </Flex>
-    </CardBody>
-  </Card>
-);
-export default Project;
+          <Flex justify={"center"}>
+            <Button mr={2}>Demo</Button>
+            <Button variant={"ghost"}>Source Code</Button>
+          </Flex>
+        </Stack>
+      </Card>
+    </motion.div>
+  );
+}

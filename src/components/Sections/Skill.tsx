@@ -23,16 +23,12 @@ const Skill: React.FC<SkillProps> = ({ techName, index }) => {
   return (
     <Card
       borderRadius={"full"}
-      as={motion.div}
+      as={motion.li}
       whileHover={{ scale: 1.1 }}
-      p={5}
+      py={3}
+      px={5}
       justify="center"
       align="center"
-      sx={{
-        "@media screen and (max-width: 768px)": {
-          boxSize: "120px",
-        },
-      }}
       variants={fadeInAnimationsVariants}
       initial="initial"
       whileInView="animate"

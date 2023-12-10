@@ -1,8 +1,18 @@
-import { Flex, Image, Stack, Text, Button, Heading } from "@chakra-ui/react";
+import {
+  Flex,
+  Image,
+  Stack,
+  Text,
+  Button,
+  Heading,
+  Icon,
+} from "@chakra-ui/react";
 import CustomSection from "components/Sections/CustomSection";
 import ProfilePicture from "assets/profile.webp";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { TiMessage } from "react-icons/ti";
+import { FaCode } from "react-icons/fa";
 // import { LazyLoadImage } from "react-lazy-load-image-component";
 // import { useSectionInView } from "lib/hooks";
 // import { useActiveSectionContext } from "context/active-section-context";
@@ -20,6 +30,7 @@ const Hero = () => {
       >
         <Flex
           direction={"column"}
+          // align={{ base: "center", md: "start" }}
           mr={{ base: "0", md: "30px" }}
           pb={{ base: "20px", md: "0px" }}
         >
@@ -71,14 +82,17 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
             >
               <Button
+                as={Link}
+                size={"lg"}
+                borderRadius={"full"}
                 href="contact"
                 w={"full"}
-                as={Link}
                 to={"contact"}
                 spy={true}
                 smooth={true}
                 offset={-56}
-                duration={500}
+                duration={1000}
+                rightIcon={<Icon as={TiMessage} boxSize={8} />}
               >
                 Get in Touch
               </Button>
@@ -89,6 +103,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
             >
               <Button
+                size={"lg"}
+                borderRadius={"full"}
                 href="projects"
                 w={"full"}
                 as={Link}
@@ -96,8 +112,9 @@ const Hero = () => {
                 spy={true}
                 smooth={true}
                 offset={-56}
-                duration={500}
-                variant={"ghost"}
+                duration={1000}
+                variant={"outline"}
+                rightIcon={<Icon as={FaCode} boxSize={6} />}
               >
                 Explore Projects{" "}
               </Button>
