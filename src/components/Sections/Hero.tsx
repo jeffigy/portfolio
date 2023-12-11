@@ -1,6 +1,5 @@
 import {
   Flex,
-  Image,
   Stack,
   Button,
   Heading,
@@ -10,16 +9,15 @@ import {
 } from "@chakra-ui/react";
 import CustomSection from "components/Sections/CustomSection";
 import ProfilePicture from "assets/profile.webp";
-import ProfilePictureBlurred from "assets/profile-blurred.webp";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { TiMessage } from "react-icons/ti";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { HiDownload } from "react-icons/hi";
 import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "lib/hooks";
 import { useActiveSectionContext } from "context/active-section-context";
+import PreloadAndLazyLoadImage from "./PreloadAndLazyLoadImage";
 const Hero = () => {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
@@ -55,20 +53,9 @@ const Hero = () => {
               duration: "0.2",
             }}
           >
-            <Image
-              mb={{ base: "15px", md: "30px" }}
-              as={LazyLoadImage}
-              borderRadius={"full"}
-              boxSize={{
-                base: "170px",
-                sm: "180px",
-                md: "190px",
-                lg: "200px",
-                xl: "210px",
-              }}
-              alt="cover-photo"
+            <PreloadAndLazyLoadImage
               src={ProfilePicture}
-              placeholderSrc={ProfilePictureBlurred}
+              alt="Profile Picture"
             />
           </motion.div>
           <Flex
@@ -77,6 +64,7 @@ const Hero = () => {
             pb={{ base: "20px", md: "0px" }}
           >
             <Heading
+              mb={{ base: "15px", md: "30px" }}
               as={motion.h1}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,10 +85,14 @@ const Hero = () => {
               mb={"30px"}
               variant={"heading"}
               textAlign={{ base: "center", md: "start" }}
-              fontSize={{ base: "20px", sm: "25px", md: "30px", lg: "35px" }}
+              fontSize={{ base: "16px", sm: "20px", lg: "25px" }}
               color={"gray.400"}
+              bgColor={"brand.bg"}
             >
-              a Web Developer
+              A web developer who loves turning ideas into reality through code.
+              Dive into my portfolio to see how I blend creativity and
+              technology to create awesome digital experiences. Let's build
+              something amazing together!
             </Heading>
 
             <Stack

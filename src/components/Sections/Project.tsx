@@ -17,7 +17,14 @@ export default function Project({
   });
   const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-
+  const ImageBehavior = {
+    initial: {
+      rotate: 0,
+    },
+    hover: {
+      rotate: 10,
+    },
+  };
   return (
     <motion.div
       ref={ref}
@@ -26,8 +33,17 @@ export default function Project({
         opacity: opacityProgess,
       }}
     >
-      <Card maxW={"700px"} direction={"row"} overflow={"hidden"}>
+      <Card
+        as={motion.div}
+        maxW={"700px"}
+        direction={"row"}
+        overflow={"hidden"}
+        whileHover={"hover"}
+        initial="initial"
+      >
         <Image
+          variants={ImageBehavior}
+          as={motion.img}
           display={{
             base: "none",
             md: "block",
@@ -43,27 +59,30 @@ export default function Project({
         />
 
         <Stack h="full" gap={"15px"} m={"10px"}>
-          <Text fontSize={"24px"} color={"gray.500"} fontWeight={"bold"}>
+          <Text fontSize={"24px"} color={"gray.600"} fontWeight={"bold"}>
             {title}
           </Text>
-          <Text maxW={"container.sm"} colorScheme="teal">
+          <Text maxW={"container.sm"} color="gray.400">
             {description}
           </Text>
-          <Flex flexWrap={"wrap"}>
+          <Flex flexWrap={"wrap"} justify={"center"}>
             {tags.map((tag, index) => (
               <Tag
                 key={index}
                 mr={2}
                 mt={2}
-                rounded={"full"}
-                colorScheme="blue"
+                // rounded={"full"}
+                bgColor="gray.100"
+                color={"teal.300"}
               >
                 {tag}
               </Tag>
             ))}
           </Flex>
           <Flex justify={"center"}>
-            <Button mr={2}>Demo</Button>
+            <Button mr={2} rounded={"full"}>
+              Demo
+            </Button>
             <Button variant={"ghost"}>Source Code</Button>
           </Flex>
         </Stack>

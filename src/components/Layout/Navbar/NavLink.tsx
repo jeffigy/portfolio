@@ -31,11 +31,13 @@ const NavLink: React.FC<NavLinkProps> = ({ name, to, onClose }) => {
       href={to}
       as={Link}
       to={to}
+      color={activeSection === name ? "teal" : "gray.400"}
       offset={-56}
       spy={true}
       smooth={true}
       duration={500}
       variant={"ghost"}
+      // variant={activeSection === name ? "solid" : 'ghost'}
       onClick={handleClick}
       mb={{ base: "20px", md: "0px" }}
       fontSize={{ base: "22px", md: "16px" }}
