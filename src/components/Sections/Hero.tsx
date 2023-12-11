@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import CustomSection from "components/Sections/CustomSection";
 import ProfilePicture from "assets/profile.webp";
+import ProfilePictureBlurred from "assets/profile-blurred.webp";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { TiMessage } from "react-icons/ti";
@@ -67,6 +68,7 @@ const Hero = () => {
               }}
               alt="cover-photo"
               src={ProfilePicture}
+              placeholderSrc={ProfilePictureBlurred}
             />
           </motion.div>
           <Flex
